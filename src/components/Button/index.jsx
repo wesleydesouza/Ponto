@@ -1,5 +1,8 @@
 import {useState, useEffect} from "react";
-const Button = (props) => {
+import Button from "@mui/material/Button";
+
+
+const ButtonList = (props) => {
 
     const [pointInOut, setPointInOut] = useState(true)
     const [points, setPoint] = useState([{ date: props.date, 
@@ -14,7 +17,9 @@ const Button = (props) => {
         setPoint(JSON.parse(myList) || []);
     }, []);
 
-    const addPoint = () =>{
+    const addPoint = (e) =>{
+
+        e.preventDefault()
 
         if(pointInOut){
         setPoint([...points, {
@@ -22,7 +27,7 @@ const Button = (props) => {
             hour: props.hours, 
             minutes: props.minutes, 
             seconds: props.seconds,
-            messege: "Saiu"
+            massege: "Saiu"
             }]);
             setPointInOut(false);
         }else{
@@ -31,7 +36,7 @@ const Button = (props) => {
                 hour: props.hours, 
                 minutes: props.minutes, 
                 seconds: props.seconds,
-                messege: "Entrou"
+                massege: "Entrou"
             }]);
             
             setPointInOut(true)
@@ -41,9 +46,9 @@ const Button = (props) => {
 
     return(
         <>
-            <button type="submit" onClick={addPoint}>Ponto</button>
+            <Button variant="outlined" type="submit" onClick={addPoint}>Ponto</Button>
         </>
     )
 }
 
-export default Button;
+export default ButtonList;

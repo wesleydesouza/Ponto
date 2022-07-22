@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import Hour from "../components/Hour";
-import Button from "../components/Button";
+import List from "../components/List";
+import ButtonList from "../components/Button";
 
 
  const Data = () => {
@@ -30,8 +31,9 @@ import Button from "../components/Button";
 
      return(
          <>
+            <List/>
             <Hour date={dateNow.date} hours={dateNow.hours} minutes={dateNow.minutes} seconds={dateNow.seconds}/>
-            <Button date={dateNow.date} hours={dateNow.hours} minutes={dateNow.minutes} seconds={dateNow.seconds}/>
+            <ButtonList date={dateNow.date} hours={dateNow.hours} minutes={dateNow.minutes} seconds={dateNow.seconds}/>
          </>
      )
 }

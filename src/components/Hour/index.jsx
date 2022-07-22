@@ -1,6 +1,5 @@
 
 const Hour = (props) => {
-    let seconds = props.seconds;
    
     return(
         <>
